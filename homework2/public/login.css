@@ -1,0 +1,121 @@
+html {
+    /* 让页面铺满屏幕 */
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica
+}
+
+body {
+    background-image: url(./assets/signupback.jpg);
+    background-size: 100% 100%;
+    backdrop-filter: blur(8px);
+    height: 100%;
+    width: 100%;
+    /* 浏览器会自动加上8px的margin */
+    margin: 0px;
+    /* 居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box{
+    height: 480px;
+    width: 800px;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.left{
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    width: 50%;
+}
+
+.left-back{
+    height: 100%;
+    width: 200%;
+}
+
+.right{
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.76);
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right>p{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+input {
+    border: none;
+    outline: none;
+    height: 45px;
+    width: 288px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+}
+
+.single-line{
+    width: 288px;
+    height: 3px;
+    background-color: rgba(87, 86, 86, 0.06);
+}
+
+input:focus{
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+input::placeholder{
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.login-button{
+    margin-top: 20px;
+    width: 288px;
+    height: 45px;
+    border: 0px;
+    outline: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.08)
+}
+
+.login-button:hover{
+    background: black;
+    color: white;
+}
+
+.sign-up{
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.sign-up:visited{
+    color: black;
+}
+
+
+@media all and (max-width: 800px) {
+    .left {
+        width: 0px;
+    }
+
+    .right {
+        width: 80%;
+    }
+}
