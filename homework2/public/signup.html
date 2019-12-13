@@ -14,9 +14,14 @@
           </div>
           <div class="right">
               <p>Sign Up Pictures</p>
+              <div class="message" id="length">password must have at least 8 characters</div>
+              <div class="message" id="capital">password must contain capital characters</div>
+              <div class="message" id="lower">password must contain lower case characters</div>
+              <div class="message" id="empty">username is empty</div>
+              <div class="message" id="already">username already exists</div>
               <input id="username" class="username" placeholder="Username"/>
               <div class="single-line"></div>
-              <input id="password" class="password" placeholder="Password"/>
+              <input id="password" class="password" placeholder="Password" type="password"/>
               <div class="single-line"></div>
               <button class="signup-button" onclick="signup()">Sign Up</button>
               <a class="login" href="login.html">or Log In</a>

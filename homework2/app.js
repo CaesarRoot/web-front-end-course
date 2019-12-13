@@ -12,7 +12,7 @@ var app = express();
 app.use(session({
     resave: false, // don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
-    secret: 'shhhh, very secret'
+    secret: 'secret'
 }));
 
 // view engine setup
@@ -124,18 +124,23 @@ app.post('/login', function(req, res, next){
     var password = descry(req.body.password);
 
     var callback = (docs, res, req) => {
-        var salt = docs[0].salt;
-        var password = descry(req.body.password);
-        hash({ password: password, salt: salt }, function (err, pass, salt, hash) {
-            // console.log(pass);
-            // console.log(hash);
-            if (err) return fn(err);
-            if (hash === docs[0].password) {
-                req.session.login = 1;
-                res.status(200).json({message:"登录成功", success: "true"});
-            }
-            else res.status(200).json({message:"用户名或密码错误", success: "false"});
-        });
+        if(docs.length == 0){
+            res.status(200).json({message:"用户名或密码错误", success: "false"});
+        }
+        else {
+            var salt = docs[0].salt;
+            var password = descry(req.body.password);
+            hash({ password: password, salt: salt }, function (err, pass, salt, hash) {
+                // console.log(pass);
+                // console.log(hash);
+                if (err) return fn(err);
+                if (hash === docs[0].password) {
+                    req.session.login = 1;
+                    res.status(200).json({message:"登录成功", success: "true"});
+                }
+                else res.status(200).json({message:"用户名或密码错误", success: "false"});
+            });
+        }
     }
 
     findDocument(db, 

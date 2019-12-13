@@ -65,6 +65,19 @@ input {
     text-align: center;
 }
 
+.message{
+    display: flex;
+    justify-content: center;
+    color: rgb(206, 94, 100);
+    font-size: smaller;
+    width: 280px;
+    height: 20px;
+    background-color:  rgba(245, 219, 224, 0.8);
+    margin-top: -20px;
+    margin-bottom: 2px;
+    visibility: hidden;
+}
+
 .single-line{
     width: 288px;
     height: 3px;

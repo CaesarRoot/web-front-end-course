@@ -31,7 +31,10 @@ function login(){
             console.log("登录成功");
             location.href = '/';
         }
-        else
+        else {
+            // Incorrect username or password.
+            document.getElementById("message").style.visibility = "visible";
             console.log(json['message']);
+        }
     });
 }

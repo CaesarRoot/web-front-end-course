@@ -72,6 +72,17 @@ input {
     background-color: rgba(87, 86, 86, 0.06);
 }
 
+#message{
+    color: rgb(206, 94, 100);
+    font-size: smaller;
+    width: 200px;
+    height: 20px;
+    background-color:  rgba(245, 219, 224, 0.8);
+    margin-top: -20px;
+    margin-bottom: 2px;
+    visibility: hidden;
+}
+
 input:focus{
     background-color: rgba(0, 0, 0, 0.06);
 }
@@ -108,6 +119,8 @@ input::placeholder{
 .sign-up:visited{
     color: black;
 }
+
+
 
 
 @media all and (max-width: 800px) {
