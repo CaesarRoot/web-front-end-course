@@ -1,0 +1,91 @@
+html {
+    /* 让页面铺满屏幕 */
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    /* 浏览器会自动加上8px的margin */
+    margin: 0px;
+}
+
+.head{
+    height: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.head>img{
+    width: 100%;
+    height: 100%;
+}
+
+.describe{
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 10%;
+    color: white;
+}
+
+.describe>h1{
+    font-size: 50px;
+}
+
+.down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding-bottom: 60px;
+}
+
+.pictures {
+    width: 100%;
+    background-color: black;
+    column-count: 3;
+}
+
+.img-container {
+    margin-left: 3%;
+    margin-right: 3%;
+    flex-grow: 1;
+    height: 300px;
+    /* column-count 会将margin加入计算，这样会导致高度不对齐，但是padding不会加入计算 */
+    padding-top: 30px;
+}
+
+.img-container>img {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container {
+    margin-top: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+.video-container > video {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media all and (max-width: 1200px) {
+    .pictures {
+        column-count: 2;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .head {
+        height: 400px;
+    }
+    .pictures {
+        column-count: 1;
+    }
+}
+

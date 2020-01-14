@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./login.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script language="javascript" type="text/javascript" src="./login.js"></script>
+    <!-- 用于加密密码的库 -->
+    <script type="text/javascript" src="./jsencrypt.js"></script>
+  </head>
+  <body>
+      <div class="content-box">
+          <div class="left">
+              <img class="left-back" src='./assets/signupback.jpg' />
+          </div>
+          <div class="right">
+              <p id="title">Log into Pictures</p>
+              <div id="message">Incorrect username or password</div>
+              <input id="username" class="username" placeholder="Username"/>
+              <div class="single-line"></div>
+              <input id="password" class="password" placeholder="Password" type="password"/>
+              <div class="single-line"></div>
+
+              <button class="login-button" onclick="login()">Log In</button>
+  
+              <a class="sign-up" href="signup.html">or Sign Up</a>
+          </div>
+      </div>
+  </body>
+</html>
